@@ -13,10 +13,7 @@
     <script>
       // We can use const here since score is a reference
       // so we can modify it even if it uses const.
-      const score = JSON.parse(localStorage.getItem('score')) || {
-        wins: 0,
-        losses: 0
-      };
+      const score = JSON.parse(localStorage.getItem('score_')) || { wins: 0, losses: 0 };
 
       function playGame(guess) {
         const randomNumber = Math.random();
@@ -29,9 +26,10 @@
         } else {
           score.losses++;
         }
-        console.log(score);
+        
 
-        localStorage.setItem('score', JSON.stringify(score));
+        localStorage.setItem('score_', JSON.stringify(score));
+        console.log(score);
       }
     </script>
   </body>
